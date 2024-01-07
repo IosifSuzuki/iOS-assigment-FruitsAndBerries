@@ -10,11 +10,14 @@ import Foundation
 enum APIEndpoint: EndpointConfigurable {
   
   case grocery
+  case groceryProduct(id: String)
   
   var method: HTTPMethod {
     switch self {
     case .grocery:
-      return .get
+        .get
+    case .groceryProduct:
+        .get
     }
   }
   
@@ -22,12 +25,16 @@ enum APIEndpoint: EndpointConfigurable {
     switch self {
     case .grocery:
       "/items/random"
+    case let .groceryProduct(id: id):
+      "/texts/\(id)"
     }
   }
   
   var queryParams: [URLQueryItem] {
     switch self {
     case .grocery:
+      []
+    case .groceryProduct:
       []
     }
   }
@@ -36,12 +43,16 @@ enum APIEndpoint: EndpointConfigurable {
     switch self {
     case .grocery:
       [:]
+    case .groceryProduct:
+      [:]
     }
   }
   
   var body: Encodable? {
     switch self {
     case .grocery:
+      nil
+    case .groceryProduct:
       nil
     }
   }

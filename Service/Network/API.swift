@@ -10,6 +10,7 @@ import Foundation
 protocol API {
   
   func fetchGrosary() async throws -> Grocery
+  func fetchGrosaryProduct(by id: String) async throws -> GroceryProductDetail
   func icon(path: String?) -> URL?
   
 }

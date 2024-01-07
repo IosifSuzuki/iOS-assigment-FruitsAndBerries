@@ -79,6 +79,12 @@ extension NetworkOperation: API {
     return try await performRequest(endpoint: endpoint, jsonDecoder: jsonDecoder)
   }
   
+  func fetchGrosaryProduct(by id: String) async throws -> GroceryProductDetail {
+    let endpoint = endpointRequest(endpoitConfigurable: APIEndpoint.groceryProduct(id: id))
+    
+    return try await performRequest(endpoint: endpoint, jsonDecoder: jsonDecoder)
+  }
+  
   func icon(path: String?) -> URL? {
     guard let path else {
       return nil

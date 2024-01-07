@@ -32,6 +32,8 @@
 		843EC2632B49D2B20020A2E2 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EC2622B49D2B20020A2E2 /* AppNavigationController.swift */; };
 		843EC2662B49EEF60020A2E2 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EC2652B49EEF60020A2E2 /* Downloader.swift */; };
 		843EC2692B49F0B30020A2E2 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EC2682B49F0B30020A2E2 /* DataDownloader.swift */; };
+		843EC26B2B4A09BD0020A2E2 /* FruitsAndBerriesDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EC26A2B4A09BD0020A2E2 /* FruitsAndBerriesDetailsViewController.swift */; };
+		843EC26D2B4A1F5A0020A2E2 /* GroceryProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843EC26C2B4A1F5A0020A2E2 /* GroceryProductDetail.swift */; };
 		DD2BBC4A2C1EC3639B303251 /* Pods_iOS_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 227395C06C669E16F5D5CD8A /* Pods_iOS_Test.framework */; };
 		EF9196922B3B1D5700DC508B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9196912B3B1D5700DC508B /* AppDelegate.swift */; };
 		EF91969B2B3B1D5C00DC508B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF91969A2B3B1D5C00DC508B /* Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		843EC2622B49D2B20020A2E2 /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		843EC2652B49EEF60020A2E2 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		843EC2682B49F0B30020A2E2 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		843EC26A2B4A09BD0020A2E2 /* FruitsAndBerriesDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsAndBerriesDetailsViewController.swift; sourceTree = "<group>"; };
+		843EC26C2B4A1F5A0020A2E2 /* GroceryProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryProductDetail.swift; sourceTree = "<group>"; };
 		BFDD637EA962BC4E975D75CA /* Pods-iOS-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test.release.xcconfig"; path = "Target Support Files/Pods-iOS-Test/Pods-iOS-Test.release.xcconfig"; sourceTree = "<group>"; };
 		EF91968E2B3B1D5700DC508B /* iOS-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9196912B3B1D5700DC508B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			children = (
 				843EC24E2B4979C10020A2E2 /* Grocery.swift */,
 				843EC2502B4979ED0020A2E2 /* GroceryProduct.swift */,
+				843EC26C2B4A1F5A0020A2E2 /* GroceryProductDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				EF9196A82B3B1D8F00DC508B /* FruitsAndBerriesModels.swift */,
 				EF9196AA2B3B1D8F00DC508B /* FruitsAndBerriesInteractor.swift */,
 				EF9196A92B3B1D8F00DC508B /* FruitsAndBerriesViewController.swift */,
+				843EC26A2B4A09BD0020A2E2 /* FruitsAndBerriesDetailsViewController.swift */,
 			);
 			path = FruitsAndBerries;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 			files = (
 				EF9196AF2B3B1D8F00DC508B /* FruitsAndBerriesViewController.swift in Sources */,
 				843EC24A2B496FA90020A2E2 /* API.swift in Sources */,
+				843EC26D2B4A1F5A0020A2E2 /* GroceryProductDetail.swift in Sources */,
 				843EC23A2B4967D50020A2E2 /* Data+Extension.swift in Sources */,
 				843EC2302B4966870020A2E2 /* Identify.swift in Sources */,
 				843EC25E2B49A81D0020A2E2 /* GroceryProductViewModel.swift in Sources */,
@@ -464,6 +471,7 @@
 				843EC22C2B4965B00020A2E2 /* Configuration.swift in Sources */,
 				843EC2462B496EE00020A2E2 /* ServiceAssemble.swift in Sources */,
 				843EC25C2B49A3BD0020A2E2 /* GroceryProductTableViewCell.swift in Sources */,
+				843EC26B2B4A09BD0020A2E2 /* FruitsAndBerriesDetailsViewController.swift in Sources */,
 				843EC23F2B4968AE0020A2E2 /* EndpointConfigurable.swift in Sources */,
 				843EC2582B49A1520020A2E2 /* BaseViewController.swift in Sources */,
 				EF9196AC2B3B1D8F00DC508B /* FruitsAndBerriesPresenter.swift in Sources */,

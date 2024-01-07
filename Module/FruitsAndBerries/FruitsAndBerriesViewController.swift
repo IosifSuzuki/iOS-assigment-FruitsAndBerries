@@ -10,6 +10,8 @@ protocol FruitsAndBerriesDisplayLogic: AnyObject {
   func display(model: FruitsAndBerriesModels.Load.ViewModel)
   func display(model: FruitsAndBerriesModels.Loading.ViewModel)
   func display(model: FruitsAndBerriesModels.Alert.ViewModel)
+  func display(model: FruitsAndBerriesModels.SelectItem.ViewModel)
+  func display(model: FruitsAndBerriesModels.LoadDetail.ViewModel)
 }
 
 class FruitsAndBerriesViewController: BaseViewController {
@@ -28,6 +30,8 @@ class FruitsAndBerriesViewController: BaseViewController {
     $0.tintColor = UIColor(hex: "#FFFFFF")
     $0.image = UIImage(named: "ic_refresh")
   }
+  
+  private weak var detailVC: FruitsAndBerriesDetailsViewController?
   
   private var dataSource: [GroceryProductViewModel] = []
   
@@ -99,19 +103,53 @@ extension FruitsAndBerriesViewController: FruitsAndBerriesDisplayLogic {
   }
   
   func display(model: FruitsAndBerriesModels.Loading.ViewModel) {
+    if let detailVC {
+      detailVC.display(model: model)
+      
+      return
+    }
+    
     model.isLoading ? startAnimation() : stopAnimation()
   }
   
   func display(model: FruitsAndBerriesModels.Alert.ViewModel) {
+    if let detailVC {
+      detailVC.display(model: model)
+      
+      return
+    }
+    
     stopAnimation()
     
     showAlert(title: model.title, message: model.message)
+  }
+  
+  func display(model: FruitsAndBerriesModels.SelectItem.ViewModel) {
+    let viewController = FruitsAndBerriesDetailsViewController()
+    viewController.interactor = interactor
+    viewController.router = router
+    
+    detailVC = viewController
+    
+    navigationController?.pushViewController(viewController, animated: true)
+  }
+  
+  func display(model: FruitsAndBerriesModels.LoadDetail.ViewModel) { 
+    detailVC?.display(model: model)
   }
   
 }
 
 // MARK: - UITableViewDelegate
 extension FruitsAndBerriesViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let request = FruitsAndBerriesModels.SelectItem.Request(indexPath: indexPath)
+    
+    interactor?.select(request: request)
+    
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
   
 }
 

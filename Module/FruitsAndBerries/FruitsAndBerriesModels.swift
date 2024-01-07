@@ -3,6 +3,9 @@
 //  iOS-Test
 //
 
+import Foundation
+import UIKit.UIColor
+
 enum FruitsAndBerriesModels {
   // Models for "load (list)" use case
   struct Load {
@@ -24,7 +27,9 @@ enum FruitsAndBerriesModels {
   
   struct Alert {
     
-    struct Request {}
+    struct Request {
+      let error: Error
+    }
     
     struct Response {
       let title: String
@@ -50,6 +55,35 @@ enum FruitsAndBerriesModels {
       let isLoading: Bool
     }
     
+  }
+  
+  struct SelectItem {
+    
+    struct Request {
+      let indexPath: IndexPath
+    }
+    
+    struct Response {
+      let id: String
+    }
+    
+    struct ViewModel { }
+  }
+  
+  struct LoadDetail {
+    struct Request { }
+    
+    struct Response {
+      let groceryProduct: GroceryProduct
+      let groceryProductDetail: GroceryProductDetail
+    }
+    
+    struct ViewModel {
+      let title: String
+      let color: UIColor?
+      let iconPath: URL?
+      let text: String
+    }
   }
   
 }

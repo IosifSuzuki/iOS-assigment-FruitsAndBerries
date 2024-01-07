@@ -11,6 +11,8 @@ protocol FruitsAndBerriesPresentationLogic {
   func present(response: FruitsAndBerriesModels.Load.Response)
   func present(response: FruitsAndBerriesModels.Loading.Response)
   func present(response: FruitsAndBerriesModels.Alert.Response)
+  func present(response: FruitsAndBerriesModels.SelectItem.Response)
+  func present(response: FruitsAndBerriesModels.LoadDetail.Response)
 }
 
 class FruitsAndBerriesPresenter {
@@ -54,6 +56,25 @@ extension FruitsAndBerriesPresenter: FruitsAndBerriesPresentationLogic {
   func present(response: FruitsAndBerriesModels.Alert.Response) {
     DispatchQueue.main.async {
       let viewModel = FruitsAndBerriesModels.Alert.ViewModel(title: response.title, message: response.message)
+      self.view?.display(model: viewModel)
+    }
+  }
+  
+  func present(response: FruitsAndBerriesModels.SelectItem.Response) {
+    DispatchQueue.main.async {
+      let viewModel = FruitsAndBerriesModels.SelectItem.ViewModel()
+      self.view?.display(model: viewModel)
+    }
+  }
+  
+  func present(response: FruitsAndBerriesModels.LoadDetail.Response) {
+    DispatchQueue.main.async {
+      let viewModel = FruitsAndBerriesModels.LoadDetail.ViewModel(
+        title: response.groceryProduct.name.capitalized,
+        color: UIColor(hex: response.groceryProduct.color),
+        iconPath: self.api.icon(path: response.groceryProduct.image),
+        text: response.groceryProductDetail.text
+      )
       self.view?.display(model: viewModel)
     }
   }
